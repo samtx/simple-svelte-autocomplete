@@ -135,6 +135,11 @@
   // adds the disabled tag to the HTML input
   export let disabled = false;
 
+  // allow setting data-form-type attribute
+  export let dataFormType = undefined;
+  // disable LastPass autofill
+  export let lpIgnore = undefined;
+
   export let debug = false;
 
   // --- Public State ----
@@ -1171,6 +1176,8 @@
       class="{inputClassName ? inputClassName : ''} input autocomplete-input"
       id={inputId ? inputId : ''}
       autocomplete={html5autocomplete ? 'on' : 'off'}
+      data-form-type={dataFormType}
+      data-lpignore={lpIgnore ? 'true' : undefined}
       {placeholder}
       {name}
       {disabled}
